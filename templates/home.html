@@ -2,13 +2,28 @@
 {% block content %}
 <h1>All Tasks List</h1>
 
-{% for task in tasks %}
-<div>
-    <p>Title: {{ task.taskTitle }}</p>
-    <p>Description: {{ task.taskDescription }}</p>
-    <p>Is Completed: {{ task.is_completed }}</p>
-    <p>Assign Date: {{ task.taskAssignDate }}</p>
+<div class="d-flex justify-content-evenly align-items-center row gx-5">
+    {% for task in tasks %}
+    <div class="card border-success mb-3"
+        style="max-width: 18rem;">
+        <div class="card-header bg-transparent border-success">ID: #{{ task.id }}</div>
+        <div class="card-body text-success">
+            <h5 class="card-title">{{ task.taskTitle }}</h5>
+            <p class="card-text">{{ task.taskDescription }}</p>
+            <h5 class="fst-italic">Assigned: {{ task.taskAssignDate }}</h5>
+        </div>
+        {% if not task.is_completed%}
+        <div class="card-footer bg-transparent border-success">
+            <a class="btn btn-primary fw-bold text-light"
+                href="{% url 'edit_post' task.id %}">Edit</a>
+            <a class="btn btn-danger fw-bold text-light"
+                href="{% url 'delete_post' task.id %}">Delete</a>
+        </div>
+        {% else %}
+        <p>Completed</p>
+        {% endif %}
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
 {% endblock %}
