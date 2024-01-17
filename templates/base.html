@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand"
-                href="{% url 'homepage' %}">Task Management System</a>
+                href="{%url 'homepage'%}">Task Management System</a>
             <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -36,15 +36,19 @@
                     <li class="nav-item">
                         <a class="nav-link active"
                             aria-current="page"
-                            href="{% url 'add_task' %}">Add Task</a>
+                            href="{%url 'add_task'%}">Add Task</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="{% url 'add_category' %}">Add Task Category</a>
+                            href="{%url 'add_category'%}">Add Task Category</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="{% url 'homepage' %}">Show Tasks</a>
+                            href="{%url 'homepage'%}">Show Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/admin/">Admin Panel</a>
                     </li>
                 </ul>
                 <form class="d-flex">

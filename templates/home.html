@@ -2,4 +2,13 @@
 {% block content %}
 <h1>All Tasks List</h1>
 
+{% for task in tasks %}
+<div>
+    <p>Title: {{ task.taskTitle }}</p>
+    <p>Description: {{ task.taskDescription }}</p>
+    <p>Is Completed: {{ task.is_completed }}</p>
+    <p>Assign Date: {{ task.taskAssignDate }}</p>
+</div>
+{% endfor %}
+
 {% endblock %}
